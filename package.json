@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "dl": "dl.js"
+  },
   "scripts": {
     "start": "node dl.js"
   },
@@ -10,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@onivoro/nodejs-cli-sdk": "^0.10.0",
     "ytdl-core": "^4.9.1"
   }
 }

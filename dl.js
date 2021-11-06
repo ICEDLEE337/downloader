@@ -1,10 +1,15 @@
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-// TypeScript: import ytdl from 'ytdl-core'; with --esModuleInterop
-// TypeScript: import * as ytdl from 'ytdl-core'; with --allowSyntheticDefaultImports
-// TypeScript: import ytdl = require('ytdl-core'); with neither of the above
+const { argParser } = require('@onivoro/nodejs-cli-sdk');
+const { name, hash } = argParser(process.argv);
+const folder = 'output'
 
+console.log(name, hash)
 
-
-ytdl('https://www.youtube.com/watch?v=K2e0LTukUaE')
-  .pipe(fs.createWriteStream('two.mp4'));
+if (!hash) {
+  console.log("missing --hash blahblahblah'");
+  console.log("optionally add --name blahblahblah'");
+  return;
+}
+ytdl(`https://www.youtube.com/watch?v=${hash}`)
+  .pipe(fs.createWriteStream(`${folder}/${name}.mp4`));

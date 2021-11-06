@@ -4,8 +4,6 @@ const { argParser } = require('@onivoro/nodejs-cli-sdk');
 const { name, hash } = argParser(process.argv);
 const folder = 'output'
 
-console.log(name, hash)
-
 if (!hash) {
   console.log("missing --hash blahblahblah'");
   console.log("optionally add --name blahblahblah'");

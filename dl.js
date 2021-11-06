@@ -9,8 +9,10 @@ const { name, hash } = argParser(process.argv);
 const resolvedFolder = resolve(process.cwd())
 
 if (!hash) {
-  console.log(`USEAGE:
-"dl --hash 'ghjys34sdf64f' --name 'my video'"
+  console.log(`
+USEAGE:
+
+dl --hash 'ghjys34sdf64f' --name 'my video'
 `);  
   return;
 }

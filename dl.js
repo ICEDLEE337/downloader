@@ -4,7 +4,7 @@ const fs = require('fs');
 const ytdl = require('ytdl-core');
 const { argParser } = require('@onivoro/nodejs-cli-sdk');
 const { name, hash } = argParser(process.argv);
-const folder = 'output'
+const resolvedFolder = resolve(process.cwd())
 
 if (!hash) {
   console.log("missing --hash blahblahblah'");
@@ -12,4 +12,4 @@ if (!hash) {
   return;
 }
 ytdl(`https://www.youtube.com/watch?v=${hash}`)
-  .pipe(fs.createWriteStream(`${folder}/${name}.mp4`));
+  .pipe(fs.createWriteStream(`${resolvedFolder}/${name}.mp4`));

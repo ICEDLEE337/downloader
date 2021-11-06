@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const fs = require('fs');
 const ytdl = require('ytdl-core');
 const { argParser } = require('@onivoro/nodejs-cli-sdk');

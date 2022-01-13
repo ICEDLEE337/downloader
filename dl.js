@@ -5,17 +5,17 @@ const { resolve } = require('path');
 const ytdl = require('ytdl-core');
 const { argParser } = require('@onivoro/nodejs-cli-sdk');
 
-const { name, hash } = argParser(process.argv);
+const { name, hash, filter } = argParser(process.argv);
 const resolvedFolder = resolve(process.cwd())
 
 if (!hash) {
   console.log(`
 USEAGE:
 
-dl --hash 'ghjys34sdf64f' --name 'my video'
+dl --hash 'ghjys34sdf64f' --name 'my video.mp3' --filter audioonly
 `);  
   return;
 }
 
-ytdl(`https://www.youtube.com/watch?v=${hash}`)
-  .pipe(createWriteStream(`${resolvedFolder}/${name}.mp4`));
+ytdl(`https://www.youtube.com/watch?v=${hash}`, {filter: 'audioonly'})
+  .pipe(createWriteStream(`${resolvedFolder}/${name}`));

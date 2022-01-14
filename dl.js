@@ -17,5 +17,5 @@ dl --hash 'ghjys34sdf64f' --name 'my video.mp3' --filter audioonly
   return;
 }
 
-ytdl(`https://www.youtube.com/watch?v=${hash}`, {filter: 'audioonly'})
+ytdl(`https://www.youtube.com/watch?v=${hash}`, {filter})
   .pipe(createWriteStream(`${resolvedFolder}/${name}`));

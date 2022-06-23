@@ -1,0 +1,15 @@
+<div class="hero txt">
+
+  <h1>Downloader</h1>
+
+  <form [formGroup]="form">
+    <input class="txt" formControlName="url" placeholder="url" /><br />
+    <input class="txt" formControlName="name" placeholder="name" />
+    <input class="txt" type="submit" [disabled]="form.invalid" (click)="submit$$.next('')" />
+  </form>
+
+  <h2>{{submit$ | async}}</h2>
+
+  <small>Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com/t/wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </small>
+</div>

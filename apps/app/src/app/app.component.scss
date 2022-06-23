@@ -1,0 +1,19 @@
+@import '~@onivoro/browser-layout/index';
+@import '~@onivoro/browser-layout/text';
+
+.hero {
+  background-image: url('../assets/pawel.jpg');
+
+  color: darkblue;
+  padding: 3rem;
+}
+
+small {
+  margin-top: 6rem;
+  display: block;
+}
+
+h1 {
+  font-size: 6rem;
+  letter-spacing: 2rem;
+}

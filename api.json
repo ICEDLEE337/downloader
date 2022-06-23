@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/download": {
+      "post": {
+        "operationId": "AppController_download",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InitDownloadDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "download"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "API DOCUMENTATION",
+    "description": "",
+    "version": "0.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "InitDownloadDto": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}
